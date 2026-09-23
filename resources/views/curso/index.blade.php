@@ -13,23 +13,6 @@
             {{-- AQUI COMEÇA O FILTRO - TUDO DENTRO DESSE BLOCO É O FORM --}}
             {{-- ======================================================= --}}
             
-             <!--                
-                <div class="col-12">
-                   @if (session('success'))
-                     <div class="alert alert-success mt-2" role="alert" >
-                         {{ session('success') }}
-                     </div>
-                   @endif
-                </div>
-            
-                <div class="col-12">
-                    @if (session('error'))
-                        <div class="alert alert-danger mt-2" role="alert">
-                            {{ session('error') }}
-                        </div>
-                    @endif    
-                 </div>
-             -->   
 
                 <div class="col-12">
                 @if (session('success'))
@@ -63,11 +46,7 @@
                     @endif    
                 </div>
 
-
-
-
-
-              
+             
             <div class="col-12 my-1">
                 {{-- O FORM É O PRÓPRIO ROW, NÃO PRECISA DE DIV ROW DENTRO --}}
                 <form class="row" action="{{ route('curso.index') }}" method="get">
@@ -136,7 +115,11 @@
                                         <div class="d-flex" style="gap: 3px;">
                                             <a href="{{ route('curso.show',$curso->id) }}"> <x-bx-detail width="20"/>  </href>
                                             <a href="{{ route('curso.edit',$curso->id) }}"> <x-eva-edit-outline width="20" /> </href>
-                                            <a href=""> <x-monoicon-delete width="20" /> </href>
+                                            <a href="#" class="btn-inativar" data-id="{{ $curso->id }}" data-toggle="modal" data-target="#modalInativar">
+                                                <i class="fas fa-trash text-danger"></i>
+                                            </a>
+                                           
+
                                         </div>
                                     </td>
                                 </tr>    
@@ -156,6 +139,49 @@
 
         </div>
     </div>
+
+
+
+{{-- MODAL INATIVAR --}}
+<div class="modal fade" id="modalInativar" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Inativar Curso?</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Esse curso será <strong>inativado</strong> e ficará com status <span class="badge badge-secondary">Inativo</span>. Deseja continuar?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+        <form id="formInativar" method="POST" action="">
+            @csrf
+            @method('DELETE')
+            <button type="submit" class="btn btn-danger">Sim, inativar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('formInativar');
+    document.querySelectorAll('.btn-inativar').forEach(btn => {
+        btn.addEventListener('click', function() {
+            let id = this.getAttribute('data-id');
+            form.action = "/curso/" + id;
+        });
+    });
+});
+</script>
+
+
+
+
 
 </x-layout>
 

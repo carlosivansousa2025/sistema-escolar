@@ -45,7 +45,7 @@ class CursoController extends Controller
     public function store(CursoRequest $request)
     {
        //dd($request);
-       $cursoCadastraodo = Curso::create([
+       $cursoCadastrado = Curso::create([
                                 'nome'        => $request['nome'],
                                 'descricao'   => $request['descricao'],
                                 'status'      => $request['status'],
@@ -54,7 +54,7 @@ class CursoController extends Controller
                                 'dt_cadastro' => date('Y-m-d')  //'dt_cadastro' => now()
        ]);
        
-        if($cursoCadastraodo)
+        if($cursoCadastrado)
         {
             return redirect()->route('curso.index')->with('success', 'Curso cadastrado com sucesso!');
         
@@ -71,7 +71,8 @@ class CursoController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $modelCurso = Curso::find($id);
+        return view('curso.view', compact('modelCurso'));
     }
 
     /**
@@ -80,15 +81,35 @@ class CursoController extends Controller
     public function edit(string $id)
     {
         $modelCurso = Curso::find($id);
+        return view('curso.update',compact('modelCurso'));
         dd($modelCurso);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(CursoRequest $request, Curso $curso)
     {
-        //
+        
+      $cursoAtualizado = $curso->update([
+                                'nome'        => $request['nome'],
+                                'descricao'   => $request['descricao'],
+                                'status'      => $request['status'],
+                                'preco'       => $request['preco'],
+                                'observacao'  => $request['observacao']
+       ]);
+       
+        if($cursoAtualizado)
+        {
+            return redirect()->route('curso.index')->with('success', 'Curso atualizado com sucesso!');
+        
+        } 
+        else
+        {
+            return redirect()->route('curso.index')->with('error', 'Erro ao atualizar curso!');
+        }
+
+
     }
 
     /**
@@ -96,6 +117,10 @@ class CursoController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+            $curso = Curso::findOrFail($id);
+                $curso->update(['status' => 0]); // 0 = Inativo
+
+                return redirect()->route('curso.index')->with('success', 'Curso inativado com sucesso!');
+
     }
 }
