@@ -8,12 +8,12 @@
 <body id="page-top">
 
     <!-- Page Wrapper -->
-    <div id="wrapper">
+    <div id="wrapper" style="min-height: 100vh;">
        <x-side-bar />
         <!-- Content Wrapper -->
-        <div id="content-wrapper" class="d-flex flex-column">
+        <div id="content-wrapper" class="d-flex flex-column" style="flex: 1;">
             <!-- Main Content -->
-            <div id="content">
+            <div id="content" class="flex-grow-1">
                 <x-nav-bar />
                 {{ $slot }}
             </div>
@@ -23,12 +23,11 @@
        <!-- End of Content Wrapper -->
     </div>
     <!-- End of Page Wrapper -->
-    <!-- Scroll to Top Button-->
+
     <a class="scroll-to-top rounded" href="#page-top">
         <i class="fas fa-angle-up"></i>
     </a>
-
-    <x-modal />
+     <x-modal />
     <x-script />
 </body>
 </html>

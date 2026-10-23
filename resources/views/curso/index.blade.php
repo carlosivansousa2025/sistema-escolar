@@ -113,8 +113,8 @@
                                     <td>{{ $curso->status == 1 ?"Ativo":"Inativo" }}</td>
                                     <td>
                                         <div class="d-flex" style="gap: 3px;">
-                                            <a href="{{ route('curso.show',$curso->id) }}"> <x-bx-detail width="20"/>  </href>
-                                            <a href="{{ route('curso.edit',$curso->id) }}"> <x-eva-edit-outline width="20" /> </href>
+                                            <a href="{{ route('curso.show',$curso->id) }}"> <x-bx-detail width="20"/>  </a>
+                                            <a href="{{ route('curso.edit',$curso->id) }}"> <x-eva-edit-outline width="20" /> </a>
                                             <a href="#" class="btn-inativar" data-id="{{ $curso->id }}" data-toggle="modal" data-target="#modalInativar">
                                                 <i class="fas fa-trash text-danger"></i>
                                             </a>
