@@ -15,3 +15,13 @@ v24.21.0
 
 ===== VS CODE =====
 1.143.1 e646868227c3e3a9e3f24277c8c7220be42c0be7 x64
+
+===== LARAVEL =====
+Laravel Framework 13.31.0
+
+===== DEPENDENCIAS DIRETAS DO COMPOSER =====
+blade-ui-kit/blade-icons                   1.10.1  A package to easily make use of icons in your Laravel Blade views. codeat3/blade-google-material-design-icons 1.21.0  A package to easily make use of "Google Fonts Material Icons" i... codeat3/blade-mono-icons                   1.6.0   A package to easily make use of Mono Icons in your Laravel Blad... fakerphp/faker                             1.24.1  Faker is a PHP library that generates fake data for you. hasnayeen/blade-eva-icons                  2.2.0   A package to easily make use of Eva Icons in your Laravel Blade... laravel/boost                              2.8.1   Laravel Boost accelerates AI-assisted development by providing ... laravel/framework                          13.31.0 The Laravel Framework. laravel/pail                               1.2.7   Easily delve into your Laravel application's log files directly... laravel/pao                                1.1.5   Agent-optimized output for PHP testing tools laravel/pint                               1.32.1  An opinionated code formatter for PHP. laravel/tinker                             3.0.2   Powerful REPL for the Laravel framework. mallardduck/blade-boxicons                 2.5.0   A package to easily make use of Boxicons in your Laravel Blade ... mockery/mockery                            1.6.15  Mockery is a simple yet flexible PHP mock object framework nunomaduro/collision                       8.9.5   Cli error handling for console/command-line PHP applications. pestphp/pest                               5.1.4   The elegant PHP Testing Framework. pestphp/pest-plugin-laravel                5.0.1   The Pest Laravel Plugin
+
+===== EXTENSOES DO VS CODE =====
+amazonwebservices.amazon-q-vscode asadbinimtiaz.kiro-vscode-extension clinyong.vscode-css-modules dart-code.dart-code dart-code.flutter donjayamanne.jquerysnippets dotjoshjohnson.xml dracula-theme.theme-dracula firefox-devtools.vscode-firefox-debug golang.go google.geminicodeassist ltmoerdani.opencode-copilot-chat ms-python.debugpy ms-python.python ms-python.vscode-pylance ms-python.vscode-python-envs naumovs.color-highlight pkief.material-icon-theme redhat.vscode-xml ritwickdey.liveserver rooveterinaryinc.roo-cline saoudrizwan.claude-dev sixth.sixth-ai sst-dev.opencode styled-components.vscode-styled-components syler.sass-indented tanishqkancharla.opencode-vscode
+
