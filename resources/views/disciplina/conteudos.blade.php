@@ -46,7 +46,16 @@
                              </div>
                             @foreach ($modelDisciplina->conteudos as $conteudo )
                                 <div class="col-12 card my-2">
+
                                     <div class="card-body row">
+                                        <div class="col-12 d-flex justify-content-end">
+                                            <button class="btn btn-danger btn-sm py-0 px-1 btn-remove-conteudo">
+                                                Remover
+                                            </button>
+                                        </div>
+
+
+
                                        <div class="col-7 form-group">
                                            <label for="titulo">Titulo</label>
                                            <input class="form-control" name="titulo[]"type="text" id="titulo"
@@ -80,11 +89,12 @@
                                            <label for="">Observacao</label>
                                            <textarea class="form-control" name="observacao" id="observacao" rows="1">{{ $conteudo->observacao}}</textarea>
                                        </div>
-                                       <div>
-                                           <input type="hidden" name="id" value {{$conteudo->id}}>
+                                       <div class="campo-id">
+                                           <input type="hidden" name="id[]" value = "{{$conteudo->id}}" >
                                            <input type="hidden" name="foi_excluido[]" value="0">
                                        </div>
                                     </div>
+
                                 </div>
                             @endforeach
                          </div>
@@ -104,7 +114,14 @@
                                 
                                 <div class="row d-none conteudo-modelo">
                                     <div  class="col-12 card my-2"> 
+                                    
                                         <div class="card-body row">
+                                            <div class="col-12 d-flex justify-content-end">
+                                                <button class="btn btn-danger btn-sm py-0 px-1 btn-remove-conteudo">
+                                                    Remover
+                                                </button>
+                                            </div>
+
                                             <div class="col-7 form-group">
                                                 <label for="titulo">Titulo</label>
                                                 <input name="titulo[]" class="form-control" type="text">
@@ -136,6 +153,13 @@
                                                 <label for="">Observacao</label>
                                                 <textarea class="form-control" name="observacao[]" id="" rows="2"></textarea>
                                             </div>
+
+                                            <div class="campo-id">
+                                                <input type="hidden" name="id[]">
+                                                
+                                            </div>
+
+
                                         </div>
                                     </div>
                                 </div> 
