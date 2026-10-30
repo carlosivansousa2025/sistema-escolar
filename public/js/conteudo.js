@@ -20,10 +20,22 @@ $(document).ready(function () {
                  .children('[name="id[]"]')[0].value;
 
                  
-        console.log(elementoIrmaoId);
-        return false;
-        let elementoPai  = $(this).closest('.card').css({'background-color':'#f1d2d2'});
-        console.log(elementoPai);
+        
+        if(typeof elementoIrmaoId !== 'undefined' && elementoIrmaoId !== '' )   
+        {
+
+                $(this).closest('.card').css({'background-color':'#f1d2d2'});
+
+                $(this).closest('div').siblings('.campo-id')
+                                .children('[name="foi_excluido[]"]')[0].value = 1;
+
+        }
+        else
+        {
+            $(this).closest('.card').remove();
+        }      
+
+        
 
     })
 

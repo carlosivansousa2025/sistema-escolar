@@ -33,3 +33,43 @@ blade-ui-kit/blade-icons                   1.10.1  A package to easily make use 
 
 ===== EXTENSOES DO VS CODE =====
 amazonwebservices.amazon-q-vscode asadbinimtiaz.kiro-vscode-extension clinyong.vscode-css-modules dart-code.dart-code dart-code.flutter donjayamanne.jquerysnippets dotjoshjohnson.xml dracula-theme.theme-dracula firefox-devtools.vscode-firefox-debug golang.go google.geminicodeassist ltmoerdani.opencode-copilot-chat ms-python.debugpy ms-python.python ms-python.vscode-pylance ms-python.vscode-python-envs naumovs.color-highlight pkief.material-icon-theme redhat.vscode-xml ritwickdey.liveserver rooveterinaryinc.roo-cline saoudrizwan.claude-dev sixth.sixth-ai sst-dev.opencode styled-components.vscode-styled-components syler.sass-indented tanishqkancharla.opencode-vscode
+
+============================================================
+===== BANCO DE DADOS MYSQL =====
+============================================================
+SGBD: MySQL
+Versao: 8.0.46
+Banco de dados: sistema_escolar_laravel
+Host: 127.0.0.1
+Porta: 3306
+Usuario: root
+Quantidade de tabelas: 25
+Tamanho total informado: 784 KB
+
+Tabelas identificadas:
+administrativo
+aluno
+aluno_curso
+aluno_disciplina
+aluno_turma
+cache
+cache_locks
+cargo
+conteudo
+curso
+curso_disciplina
+disciplina
+escola
+failed_jobs
+job_batches
+jobs
+migrations
+password_reset_tokens
+pessoa
+professor
+sessions
+tipo_conteudo
+turma
+turma_curso
+users
+
